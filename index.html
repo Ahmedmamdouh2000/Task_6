@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لغات البرمجة</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            background-color: #f8f9fa;
+            margin: 100px;
+            padding: 0;
+            direction: rtl;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        .header {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+
+        .header p {
+            color: #5a6066;
+            margin: 0;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: nowrap;
+            overflow: hidden;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            width: 30%;
+            margin-bottom: 20px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+
+        .card .number {
+            background-color: #e9ecef;
+            border-radius: 20%;
+            width: 25px;
+            height: 30px;
+            line-height: 30px;
+
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .navigation {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .navigation button {
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin: 0 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navigation button:hover {
+            background-color: #e9ecef;
+        }
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #25d366;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: #fff;
+        }
+        @media (max-width: 768px) {
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: 100%;
+            }
+
+            .header h1, .header p {
+                margin-left: 0;
+                text-align: center;
+            }
+
+            .header h1 {
+                font-size: 1.5em;
+            }
+
+            .header p {
+                font-size: 0.9em;
+            }
+
+            .navigation {
+                top: 10px;
+                left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <button onclick="nextCard()">&rarr;</button>
+            <button onclick="previousCard()">&larr;</button>
+            
+        </div>
+        <div class="header">
+            <h1>لغات البرمجة</h1>
+            <p>لغات البرمجة المستخدمة في تصميم مواقع الويب</p>
+        </div>
+        <div class="cards" id="card-container">
+            <!-- Initial set of cards will be inserted here -->
+        </div>
+    </div>
+    <a href="https://wa.link/ml0vpg" class="whatsapp-icon" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 0C5.371 0 0 5.371 0 12c0 2.123.553 4.105 1.606 5.867L0 24l6.293-1.651C8.032 23.447 9.992 24 12 24c6.629 0 12-5.371 12-12S18.629 0 12 0zm.006 21.931c-1.763 0-3.469-.489-4.965-1.402l-.351-.204-3.735.979.996-3.635-.227-.372c-.991-1.619-1.517-3.492-1.517-5.397 0-5.553 4.514-10.067 10.067-10.067S22.067 6.447 22.067 12 17.552 22.067 12.006 22.067zM16.81 14.671c-.281-.141-1.669-.826-1.927-.919-.258-.093-.447-.14-.636.141-.187.28-.728.919-.893 1.109-.164.187-.327.21-.605.07-.281-.14-1.188-.438-2.26-1.397-.835-.742-1.398-1.66-1.56-1.94-.164-.28-.017-.431.123-.572.127-.125.281-.327.422-.491.141-.164.187-.28.281-.463.093-.187.047-.35-.023-.491-.07-.14-.635-1.523-.87-2.087-.23-.554-.464-.48-.635-.48-.164-.007-.352-.007-.542-.007-.187 0-.491.07-.749.35-.258.28-.98.959-.98 2.335s1.004 2.705 1.144 2.891c.14.187 1.973 3.013 4.78 4.224.668.287 1.19.458 1.596.587.671.213 1.281.183 1.762.111.537-.08 1.669-.68 1.905-1.336.234-.652.234-1.215.164-1.336-.07-.14-.258-.211-.54-.352z"/>
+        </svg>
+    </a>
+    <script>
+        const cards = [
+        {
+                number: "01",
+                title: " HTML لغة في تصميم مواقع الويب ",
+                text: "و هي لغة ترميز تتكون بشكل أساسي من الأوامر و الوسوم التي يستخدمها مصمموا الويب في تصميم المواقع لغة الترميز عبارة عن الوسوم و هي نص عادي مزود بعلامات مخصصه لتحديد أقسام الصفحة. و النص الشعبي هو عباره عن النص المزود بالروابط التي يمكن للمستخدمين النقر عليها"
+            },
+            {
+                number: "02",
+                title: "لغة Css",
+                text: "و هي لغة توصيفية تساهم بشكل رئيسي في تمييز الموقع بشكله و تصميمه الفريد. عالميا ما يتك استخدام هذه اللغة مع الHTml عند تصميم مواقع الويب و هنا , تعتبر ال HTML هي أساس كافة عناصر صفحات الويب, أما الCss فهي أساس شكل و تصميم الموقع, حيث أنه من دونها سيكون "
+            },
+            {
+                number: "03",
+                title: "إطار عمل Svelte",
+                text: "Svelte هو إطار عمل حديث يعمل بطريقة مختلفة عن أطر العمل التقليدية. يقوم بتحويل مكوناتك إلى كود فعّال يتم تنفيذه في المتصفح."
+            },
+            {
+                number: "04",
+                title: "إطار عمل Vue.js",
+                text: "يعد إطار عمل Vue.js خفيف الوزن وسهل الاستخدام، ويتيح لك بناء واجهات المستخدم بشكل تدريجي. يقدم أداءً ممتازًا وقابلية للتوسع."
+            },
+            {
+                number: "05",
+                title: "إطار عمل Bootstrap",
+                text: "في تصميم مواقع الويب، يقوم إطار عمل Bootstrap بتسهيل عملية تصميم صفحات CSS للويب، حيث أنه يوفر كلاس جاهزة. يمكنك استخدامه لإظهار العناصر أو التصاميم بشكل جميل على الأجهزة المختلفة، سواء حاسوب، أو جهاز محمول."
+            },
+            {
+                number: "06",
+                title: "إطار عمل ReactJs",
+                text: "في تطوير واجهات المواقع، يتخصص إطار عمل React Js بشكل أساسي على تكوين واجهات من صفحة واحدة. تقوم بتحديث العناصر المطلوبة دون إعادة تحميل الصفحة. هذا بدوره يوفر أداء سريع لصفحات الويب."
+            },
+            {
+                number: "07",
+                title: "إطار عمل Angular",
+                text: "ويعتمد في عمله على لغة TypeScript. يبني إطار عمل Angular على المكونات لبناء التطبيقات التي تتميز بأنها قابلة للتوسع. يقدم لك هذا الإطار العديد من الميزات ومنها التوجيه، الاتصال بين الخادم والعميل، إدارة النماذج، وغير ذلك."
+            },
+        ];
+
+        let currentIndex = 0;
+
+        function renderCards() {
+            const cardContainer = document.getElementById('card-container');
+            cardContainer.innerHTML = '';
+            for (let i = currentIndex; i < currentIndex + 3; i++) {
+                const card = cards[i % cards.length];
+                const cardElement = document.createElement('div');
+                cardElement.classList.add('card');
+                cardElement.innerHTML = `
+                    <div class="number">${card.number}</div>
+                    <h3>${card.title}</h3>
+                    <p>${card.text}</p>
+                `;
+                cardContainer.appendChild(cardElement);
+            }
+        }
+
+        function nextCard() {
+            currentIndex = (currentIndex + 1) % cards.length;
+            renderCards();
+        }
+
+        function previousCard() {
+            currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+            renderCards();
+        }
+
+        // Initial render
+        renderCards();
+    </script>
+</body>
+</html>
